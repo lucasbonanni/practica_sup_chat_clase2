@@ -1,0 +1,38 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <!--<ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>-->
+    <ion-list>
+    <!-- usar clase css list card-->
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in misMensajes" type="item-text-wrap"  ng-model="misMensajes">
+        <h2>{{chat.usuario}}</h2>
+        <p>{{chat.mensaje}}</p>
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+        <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">
+
+          Delete
+        </ion-option-button>-->
+
+      </ion-item>
+    </ion-list>
+    <ion-nav-view name="tab-account">
+    <div>
+      <label class="item item-input">
+        <input type="text">
+      </label>
+      <button class="button icon ion-checkmark-circled"></button><!--ion-checkmark-circled-->
+    </div>
+    </ion-nav-view>
+  </ion-content>
+</ion-view>
