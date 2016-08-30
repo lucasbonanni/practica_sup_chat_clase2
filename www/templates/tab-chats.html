@@ -2,7 +2,7 @@
   <ion-content>
     <ion-nav-view name="tab-account">
       <ion-list>
-        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in misMensajes" type="item-text-wrap" >
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in misMensajes" ng-if="chat.usuario != null" type="item-text-wrap" >
           <h2>{{chat.usuario}}</h2>
           <p>{{chat.mensaje}}</p>
         </ion-item>
