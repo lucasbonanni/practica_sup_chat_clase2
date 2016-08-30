@@ -13,6 +13,12 @@ navigation history that also transitions its views in and out.
   <!-- Chats Tab -->
   <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
     <ion-nav-view name="tab-chats"></ion-nav-view>
+    <div class=" bar bar-subfooter">
+      <label class="item item-input" style="width: 85em; float: left;">
+        <input id="messageInput" type="text" ng-model="message">
+      </label>
+      <button class="button icon ion-checkmark-circled"></button>
+    </div>
   </ion-tab>
 
   <!-- Account Tab -->
