@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) { })
 
 .controller('ChatsCtrl', function($scope, Chats, $timeout) {
   // With the new view caching in Ionic, Controllers are only called
@@ -14,6 +14,7 @@ angular.module('starter.controllers', [])
 
   $scope.misMensajes=[];
     // agregamos la funcion que funciona de callback que es disparada por cada mensaje de chat.
+  
   messagesRef.on('child_added', function (snapshot) {
     $timeout(function() {
           var message = snapshot.val();
@@ -21,6 +22,14 @@ angular.module('starter.controllers', [])
           console.log(message);
         });
   });
+
+
+  $scope.saveMessage = function(){
+    var msg = $scope.message;
+      messagesRef.push({usuario:'Lucas', mensaje:msg});
+      console.log("message save");
+      $state.go('tab.chats',null,{reload: true});
+    };
 
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
