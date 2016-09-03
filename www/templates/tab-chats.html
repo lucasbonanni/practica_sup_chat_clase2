@@ -7,10 +7,15 @@
           <p>{{chat.mensaje}}</p>
         </ion-item>
       </ion-list>
-    </ion-nav-view>
-    
 
+    </ion-nav-view>
   
   </ion-content>
-
+  <ion-footer-bar class=" bar bar-footer bar-frosted" ng-controller="ChatsCtrl">
+        <label class="item item-input" style="width: 85em; float: left;">
+        <input id="messageInput" type="text" ng-model="message" >
+        </label>
+        <div class="buttons">
+        <button type="submit" class="button icon ion-checkmark-circled" ng-click="saveMessage()"></button></div>
+    </ion-footer-bar>
 </ion-view>
