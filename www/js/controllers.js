@@ -36,8 +36,18 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
+.controller('AccountCtrl', function($scope, $http) {
+  /*$scope.settings = {
     enableFriends: true
-  };
+  };*/
+  $http.get('https://restcountries.eu/rest/v1/region/americas')
+  .then(function(respuesta){
+      $scope.paises = respuesta.data;
+      console.log(respuesta.data);
+  },
+  function(error){
+
+  });
+  
+
 });
